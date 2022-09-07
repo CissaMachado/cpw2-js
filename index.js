@@ -11,9 +11,12 @@ function invert(people){
     // 1) Peça ao usuário para digitar vários nomes. Exiba na tela
     // todos os nomes digitados, porém de maneira invertida (do último para o primeiro).
     // Uma dica, você pode utilizar a função prompt para permitir que o usuário digite os
-    // nomes dos usuários.
+    // nomes dos usuários
 
-    return [];
+    let peopleInvertida = people.reverse();
+
+
+    return peopleInvertida;
 }
 
 /**
@@ -29,7 +32,16 @@ function mean(grades){
     // o nome do aluno, sua média e se ele foi aprovado, sabendo-se que a média para aprovação é igual
     // ou superior a 7.
 
-    return 0;
+    let soma = 0;
+
+    for (let i = 0; i < 3; i++) {
+         soma +=  grades[i];
+         
+    }
+     var mean = soma / 3;
+
+     return mean;
+          
 }
 
 /**
@@ -45,7 +57,13 @@ function isApproved(mean){
     // o nome do aluno, sua média e se ele foi aprovado, sabendo-se que a média para aprovação é igual
     // ou superior a 7.
 
-    return "";
+    if (mean>=7) {
+        resultado  = 'aprovado';
+    }else{
+        resultado = 'reprovado';
+    }
+
+    return resultado;
 }
 
 /**
@@ -62,7 +80,62 @@ function wide(strDate){
     // “split” de uma string que quebra a string em pedaços dado um separador como argumento da função.
     // Nesse caso, o separador é a barra (/) da data.
 
-    return "";
+    var data = strDate.split("/");
+    var mes = data[1];
+
+    switch(mes){
+        case '01':
+            mes = ' de Janeiro de ';
+            break;
+    
+        case '02':
+            mes = ' de fevereiro de ';
+            break;
+    
+        case '03':
+            mes = ' de março de ';
+            break;
+            
+        case '04':
+            mes = ' de abril de ';
+            break;
+        case '05':
+            mes = ' de maio de ';
+            break;
+        case '06':
+            mes = ' de junho de';
+            break;
+        case '07':
+            mes = ' de julho de ';
+            break;
+        case '08':
+            mes = ' de agosto de ';
+            break;
+        case '09':
+            mes = ' de setembro de ';
+            break;
+        case '10':
+            mes = ' de outubro de ';
+            break;
+            case '11':
+            mes = 'de novembro de ';
+            break;
+        case '12':
+            mes = ' de dezembro de ';
+            break;
+            default:
+    
+        }
+        var tempo = data[0] + mes + data[2];
+        if (strDate === "") {
+            return "";
+        } else {
+            return tempo;
+        }
+    
+    
+        return tempo;
+    
 }
 
 // Trecho utilizado pelos testes
